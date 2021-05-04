@@ -1,0 +1,63 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------- Menu Items (unordered list) ----------- */
+
+.menu-items{
+  position: absolute;
+  top: 0;
+  list-style: none;
+  background: rgba(0,0,0,0.8);
+  width: 200px;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  padding-top: 80px;
+
+}
+.menu-items li{
+  text-align: center;
+  padding: 10px;
+}
+.menu-items li:hover{
+  background: rgba(0,0,0,0.4);
+  transition: all 0.4s ease-in-out;
+}
+.menu-items a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+/* -------------------- icon (checkbox) ------------ */
+#icon{
+  display: none;
+}
+
+/*--------------- labels of bar and cross icons -----------------*/
+#bar-label i,#cross-label i{
+  display: inline-block;
+  font-size: 3em;
+  padding-left: 10px;
+  cursor: pointer;
+}
+#cross-label{
+  opacity: 0;
+}
+.menu-bar #icon:checked ~ .menu-items{
+  display: block;
+  transform: translateX(0);
+  z-index: -1;
+}
+.menu-bar #icon:checked + #bar-label{
+  display: none;
+}
+.menu-bar #icon:checked ~ #cross-label{
+  z-index: 999;
+  opacity: 1;
+  color: #fff;
+  transition: opacity 0.s ease-in;
+}
